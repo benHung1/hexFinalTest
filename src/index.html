@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./index.js" defer></script>
+
+    <link rel="stylesheet" href="../dist/output.css" />
+
+    <link rel="stylesheet" href="./index.css" />
+
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 登入頁面 -->
+    <div class="loginContainer divContainer bg-[#FFD370] h-screen w-screen">
+      <div class="wrapper h-full flex items-center justify-around">
+        <div class="leftBox">
+          <img src="./loginLeft.png" alt="" srcset="" />
+        </div>
+
+        <div class="rightBox">
+          <h3 class="text-[#333333] font-bold text-[24px] my-5">
+            最實用的線上代辦事項服務
+          </h3>
+
+          <form action="#" class="loginForm flex flex-col gap-5">
+            <label class="flex flex-col font-bold">
+              Email:
+              <input
+                type="email"
+                class="email p-2 rounded-xl"
+                placeholder="請輸入email"
+              />
+            </label>
+
+            <label class="flex flex-col font-bold">
+              Password:
+              <input
+                type="password"
+                class="password p-2 rounded-xl"
+                placeholder="請輸入密碼"
+              />
+            </label>
+
+            <button
+              type="button"
+              class="loginBtn font-bold my-5 bg-[#333333] text-white p-2 rounded-xl w-1/2 m-auto"
+            >
+              登入
+            </button>
+
+            <button type="button" class="btn font-bold signUpBtn">
+              註冊帳號
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- 註冊頁面 -->
+
+    <div
+      class="signUpContainer divContainer bg-[#FFD370] h-screen w-screen hidden"
+    >
+      <div class="wrapper h-full flex items-center justify-around">
+        <div class="leftBox">
+          <img src="./loginLeft.png" alt="" srcset="" />
+        </div>
+
+        <div class="rightBox">
+          <h3 class="title text-[#333333] font-bold text-[24px] my-5">
+            最實用的線上代辦事項服務
+          </h3>
+
+          <form action="#" class="form flex flex-col gap-5">
+            <label class="flex flex-col font-bold">
+              Email:
+              <input
+                type="email"
+                class="email p-2 rounded-xl"
+                placeholder="請輸入email"
+              />
+            </label>
+
+            <label class="flex flex-col font-bold">
+              您的暱稱:
+              <input
+                type="nickName"
+                class="nickName p-2 rounded-xl"
+                placeholder="請輸入暱稱"
+              />
+            </label>
+
+            <label class="flex flex-col font-bold">
+              Password:
+              <input
+                type="password"
+                class="password p-2 rounded-xl"
+                placeholder="請輸入密碼"
+              />
+            </label>
+
+            <label class="flex flex-col font-bold">
+              Check Password:
+              <input
+                type="checkPassWord"
+                class="checkPassWord p-2 rounded-xl"
+                placeholder="請再次輸入密碼"
+              />
+            </label>
+
+            <button
+              class="goSignUpBtn font-bold my-5 bg-[#333333] text-white p-2 rounded-xl w-1/2 m-auto"
+            >
+              註冊帳號
+            </button>
+
+            <button class="loginBtn btn font-bold">登入</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- 代辦事項清單 -->
+    <div class="todoListcontainer hidden">
+      <header class="flex justify-between items-center my-5">
+        <img src="./logo.png" alt="" srcset="" />
+        <div class="flex gap-4">
+          <p class="nickNameTodoList">王小明的代辦</p>
+          <button class="logOutBtn btn">登出</button>
+        </div>
+      </header>
+      <div class="card input">
+        <input type="text" class="addTodoInput" placeholder="請輸入待辦事項" />
+        <a href="#" class="btn_add">+</a>
+      </div>
+      <div class="card card_list">
+        <ul class="tab">
+          <li data-num="0" class="active">全部</li>
+          <li data-num="1">待完成</li>
+          <li data-num="2">已完成</li>
+        </ul>
+        <div class="cart_content">
+          <ul class="list"></ul>
+          <div class="list_footer">
+            <p class="notDoneList">個待完成項目</p>
+            <a href="#" class="deleteAll">清除已完成項目</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
